@@ -14,15 +14,15 @@ class PostmanEchoTest {
         given()
                 .baseUri("https://postman-echo.com")
                 .contentType("text/plain; charset=UTF-8")
-                .body("Радуйся, мир")
+                .body("Здравствуй")
 
 
                 .when()
                 .post("/post")
 
                 .then()
-                .statusCode(400)
-                .body("data", equalTo("Радуйся, мир"))
+                .statusCode(200)
+                .body("data", equalTo("Здравствуй"))
                 .contentType(ContentType.JSON)
 
         ;
